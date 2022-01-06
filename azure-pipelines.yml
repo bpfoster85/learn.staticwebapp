@@ -1,0 +1,18 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureStaticWebApp@0
+  inputs:
+    app_location: '/blazor.app'
+    output_location: "wwwroot"
+    azure_static_web_apps_api_token: '2ae3eb72fd51d03ca48f27ecc5c264a8f222ee84845e42d4ca35530757144b0e0-2b14a2b7-9979-423e-b24b-3347bc88c60901e14276'
